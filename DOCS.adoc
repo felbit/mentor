@@ -1,0 +1,93 @@
+= Mentor Documentation
+Martin Penckert <martin.penckert@gmail.com>
+Version 0.0.1, 2020-06-24
+
+
+== Domain
+
+Business domain is a German mental health and support system. Therefore most business terms are kept in German, e.g. `Angebot` or `Qualitaetskriterium`. 
+Documentation is kept in English for purpose of foreign inclusion. Every German term is anotated by a comment explaining its meaning and intent.
+
+== Code Style
+
+Please read the Elixir code guidelines (https://github.com/christopheradams/elixir_style_guide).
+
+== Questioniare / Diagnose
+
+The questionaire (domain term: `Diagnose`) is the central user facing part of the application. 
+It is essentially a multi-part-form diagnostic that results either in general help and informations about mental health or in a specific list of `-> Angebot`.
+
+== Schemas
+
+=== Angebot
+
+`Angebot` (service offering) discribes the central data unit. A `Angebot` is essentially the resulting document of a `-> Diagnose`.
+
+.Angebot
+[source, elixir]
+----
+# main information
+titel                # string          - (unique) title
+beschreibung         # string          - short description of the service offered
+link                 # string          - hyperlink to the service's website
+typ                  # list of strings - Prävention | Hilfsangebot | Information
+qualitaetskriterium  # string          - Kammer | KV - Who has verified the service?
+
+# Boolean values defining the kind of service
+einzelangebot                 # boolean - ??
+suchfunktion                  # boolean - ??
+psycho_therapie_vermittlung   # boolean - does the service provide transfer to therapy
+beratungsangebot              # boolean - ??
+hotline                       # boolean - does the service provide a phone hotline
+
+# service formats available
+app        # boolean - has it an mobile App?
+website    # boolean - has it a website?
+pdf_file   # boolean - has it a pdf file?
+video      # boolean - has it a video?
+
+# further service formats
+selbsthilfegruppe   # boolean - provides encounter group
+forum               # boolean - provides professionally guided online boards
+chatbot             # boolean - provides chat (-bot)
+selbsttest          # boolean - provides self evaluation survey
+psychoedukation     # boolean - provides further educational information to mental health issues
+corona              # boolean - provides COVID-19 specific information or services
+
+# language patterns
+alternative_sprachen          # list of strings - languages supported (besides German), e.g. English, Arabic, sign language
+einfache_sprache              # boolean         - language is kept simple, w/o technical vocabulary
+entstigmatisierende_sprache   # boolean         - ??
+genderneutrale_sprache        # boolean         - languages addresses all gender indetification
+ansprache                     # string - Du | Sie | unpersönlich - formal or informal saluation
+
+# more criteria
+ansprechendes_design   # boolean - modern, friendly design
+
+# diagnostic focus
+transdiagnostisch      # boolean         - Service not specialized towards one issue
+beschwerdespezifisch   # list of strings - Service is specialiced towards one issue
+zielgruppen            # list of strings - target groups
+
+# area of service
+region       # string          - national | regional | beides - area delimiter
+bundesland   # list of strings - optional state of regional service
+city         # string          - optional specification of city of regional service
+
+# sponsorship
+organisation    # string  - organisation responsible for the service
+konfessionell   # boolean - sectarian organisaion?
+kosten          # string  - kostenlos | erstattet | kostenpflichtig | teilweise kostenpflichtig
+                #         - cost of service
+
+# research (internal data)
+anmerkungen            # string - notes of the researcher in charge
+recherchiert_von       # string - name of researcher
+geprueft_von           # string - name of auditor
+aufnahmevorschlag      # boolean - should be in the system?
+aufnahmeentscheidung   # boolean - is in the system?
+
+# more
+screening    # boolean - the researcher has gone deeper than just a first screening
+mm_favorit   # boolean - is a favourite service of the mental mentor team
+----

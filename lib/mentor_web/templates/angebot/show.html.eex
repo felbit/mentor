@@ -1,0 +1,218 @@
+<h1>Show Angebot</h1>
+
+<ul>
+
+  <li>
+    <strong>Titel:</strong>
+    <%= @angebot.titel %>
+  </li>
+
+  <li>
+    <strong>Beschreibung:</strong>
+    <%= @angebot.beschreibung %>
+  </li>
+
+  <li>
+    <strong>Link:</strong>
+    <%= @angebot.link %>
+  </li>
+
+  <li>
+    <strong>Qualitaetskriterium:</strong>
+    <%= @angebot.qualitaetskriterium %>
+  </li>
+
+  <li>
+    <strong>Typ:</strong>
+    <%= @angebot.typ %>
+  </li>
+
+  <li>
+    <strong>Einzelangebot:</strong>
+    <%= @angebot.einzelangebot %>
+  </li>
+
+  <li>
+    <strong>Suchfunktion:</strong>
+    <%= @angebot.suchfunktion %>
+  </li>
+
+  <li>
+    <strong>Psychotherapie:</strong>
+    <%= @angebot.psychotherapie %>
+  </li>
+
+  <li>
+    <strong>Beratungsangebot:</strong>
+    <%= @angebot.beratungsangebot %>
+  </li>
+
+  <li>
+    <strong>Hotline:</strong>
+    <%= @angebot.hotline %>
+  </li>
+
+  <li>
+    <strong>App:</strong>
+    <%= @angebot.app %>
+  </li>
+
+  <li>
+    <strong>Website:</strong>
+    <%= @angebot.website %>
+  </li>
+
+  <li>
+    <strong>Pdf:</strong>
+    <%= @angebot.pdf %>
+  </li>
+
+  <li>
+    <strong>Video:</strong>
+    <%= @angebot.video %>
+  </li>
+
+  <li>
+    <strong>Selbsthilfegruppe:</strong>
+    <%= @angebot.selbsthilfegruppe %>
+  </li>
+
+  <li>
+    <strong>Forum:</strong>
+    <%= @angebot.forum %>
+  </li>
+
+  <li>
+    <strong>Chatbot:</strong>
+    <%= @angebot.chatbot %>
+  </li>
+
+  <li>
+    <strong>Selbsttest:</strong>
+    <%= @angebot.selbsttest %>
+  </li>
+
+  <li>
+    <strong>Psychoedukation:</strong>
+    <%= @angebot.psychoedukation %>
+  </li>
+
+  <li>
+    <strong>Corona:</strong>
+    <%= @angebot.corona %>
+  </li>
+
+  <li>
+    <strong>Alternative sprachen:</strong>
+    <%= @angebot.alternative_sprachen %>
+  </li>
+
+  <li>
+    <strong>Einfache sprache:</strong>
+    <%= @angebot.einfache_sprache %>
+  </li>
+
+  <li>
+    <strong>Entstigmatisierende sprache:</strong>
+    <%= @angebot.entstigmatisierende_sprache %>
+  </li>
+
+  <li>
+    <strong>Genderneutrale sprache:</strong>
+    <%= @angebot.genderneutrale_sprache %>
+  </li>
+
+  <li>
+    <strong>Ansprache:</strong>
+    <%= @angebot.ansprache %>
+  </li>
+
+  <li>
+    <strong>Ansprechendes design:</strong>
+    <%= @angebot.ansprechendes_design %>
+  </li>
+
+  <li>
+    <strong>Transdiagnostisch:</strong>
+    <%= @angebot.transdiagnostisch %>
+  </li>
+
+  <li>
+    <strong>Beschwerden:</strong>
+    <%= @angebot.beschwerden %>
+  </li>
+
+  <li>
+    <strong>Zielgruppen:</strong>
+    <%= @angebot.zielgruppen %>
+  </li>
+
+  <li>
+    <strong>Region:</strong>
+    <%= @angebot.region %>
+  </li>
+
+  <li>
+    <strong>Bundesland:</strong>
+    <%= @angebot.bundesland %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @angebot.city %>
+  </li>
+
+  <li>
+    <strong>Organisation:</strong>
+    <%= @angebot.organisation %>
+  </li>
+
+  <li>
+    <strong>Konfessionell:</strong>
+    <%= @angebot.konfessionell %>
+  </li>
+
+  <li>
+    <strong>Kosten:</strong>
+    <%= @angebot.kosten %>
+  </li>
+
+  <li>
+    <strong>Anmerkungen:</strong>
+    <%= @angebot.anmerkungen %>
+  </li>
+
+  <li>
+    <strong>Recherchiert von:</strong>
+    <%= @angebot.recherchiert_von %>
+  </li>
+
+  <li>
+    <strong>Geprueft von:</strong>
+    <%= @angebot.geprueft_von %>
+  </li>
+
+  <li>
+    <strong>Aufnahmevorschlag:</strong>
+    <%= @angebot.aufnahmevorschlag %>
+  </li>
+
+  <li>
+    <strong>Aufnahme:</strong>
+    <%= @angebot.aufnahme %>
+  </li>
+
+  <li>
+    <strong>Screening:</strong>
+    <%= @angebot.screening %>
+  </li>
+
+  <li>
+    <strong>Mm favorit:</strong>
+    <%= @angebot.mm_favorit %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.angebot_path(@conn, :edit, @angebot) %></span>
+<span><%= link "Back", to: Routes.angebot_path(@conn, :index) %></span>

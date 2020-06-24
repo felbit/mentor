@@ -1,0 +1,32 @@
+<h1>Übersicht aller Angebote</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titel</th>
+      <th>Beschreibung</th>
+      <th>Angezeigt</th>
+      <th>Favorit</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for angebot <- @angebote do %>
+    <tr>
+      <td><%= angebot.titel %></td>
+      <td><%= angebot.beschreibung %></td>
+      <td><%= angebot.aufnahme %></td>
+      <td><%= angebot.mm_favorit %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.angebot_path(@conn, :show, angebot) %></span>
+        <span><%= link "Edit", to: Routes.angebot_path(@conn, :edit, angebot) %></span>
+        <span><%= link "Delete", to: Routes.angebot_path(@conn, :delete, angebot), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Angebot", to: Routes.angebot_path(@conn, :new) %></span>
