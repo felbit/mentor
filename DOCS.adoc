@@ -91,3 +91,15 @@ aufnahmeentscheidung   # boolean - is in the system?
 screening    # boolean - the researcher has gone deeper than just a first screening
 mm_favorit   # boolean - is a favourite service of the mental mentor team
 ----
+
+== Operations
+
+=== Heroku (Execution Environment)
+The application is currently hosted on Heroku to provide a quick feedback loop (easy to setup and bring into CI with GitHub).
+The address is `https://evening-fortress-84032.herokuapp.com/`.footnote:[The names for applications are randomly chosen by Heroku, so `evening-fortress-84032` is just a random ID. It would be a good idea to move that to something more meaningful in the future.] +
+
+I followed this tutorial to get it up and running: https://hexdocs.pm/phoenix/heroku.html.
+
+=== PostgreSQL (Database)
+I used a PostgreSQL database - both, locally as well as with Heroku - just for the sake of being very familiar with it. At Heroku this is currently a `hobby-dev`-tier database for it is free of charge.
+
