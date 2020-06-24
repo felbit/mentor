@@ -1,7 +1,7 @@
 defmodule Mentor.Angebote.Angebot do
   use Ecto.Schema
   import Ecto.Changeset
-  
+
   schema "angebote" do
     field :titel, :string
     field :beschreibung, :string
@@ -37,17 +37,17 @@ defmodule Mentor.Angebote.Angebot do
     field :selbsttest, :boolean, default: false
     field :genderneutrale_sprache, :boolean, default: false
     field :zielgruppen, {:array, :string}
-    
+
     field :region, :string
     field :bundesland, {:array, :string}
-    field :city, :string
-    
+    field :city, :string, default: "-"
+
     field :anmerkungen, :string
     field :recherchiert_von, :string
     field :geprueft_von, :string
     field :aufnahmevorschlag, :boolean, default: false
     field :aufnahme, :boolean, default: false
-    
+
     field :mm_favorit, :boolean, default: false
 
     timestamps()
@@ -56,7 +56,93 @@ defmodule Mentor.Angebote.Angebot do
   @doc false
   def changeset(angebot, attrs) do
     angebot
-    |> cast(attrs, [:titel, :beschreibung, :link, :qualitaetskriterium, :typ, :einzelangebot, :suchfunktion, :psychotherapie, :beratungsangebot, :hotline, :app, :website, :pdf, :video, :selbsthilfegruppe, :forum, :chatbot, :selbsttest, :psychoedukation, :corona, :alternative_sprachen, :einfache_sprache, :entstigmatisierende_sprache, :genderneutrale_sprache, :ansprache, :ansprechendes_design, :transdiagnostisch, :beschwerden, :zielgruppen, :region, :bundesland, :city, :organisation, :konfessionell, :kosten, :anmerkungen, :recherchiert_von, :geprueft_von, :aufnahmevorschlag, :aufnahme, :screening, :mm_favorit])
-    |> validate_required([:titel, :beschreibung, :link, :qualitaetskriterium, :typ, :einzelangebot, :suchfunktion, :psychotherapie, :beratungsangebot, :hotline, :app, :website, :pdf, :video, :selbsthilfegruppe, :forum, :chatbot, :selbsttest, :psychoedukation, :corona, :alternative_sprachen, :einfache_sprache, :entstigmatisierende_sprache, :genderneutrale_sprache, :ansprache, :ansprechendes_design, :transdiagnostisch, :beschwerden, :zielgruppen, :region, :bundesland, :city, :organisation, :konfessionell, :kosten, :anmerkungen, :recherchiert_von, :geprueft_von, :aufnahmevorschlag, :aufnahme, :screening, :mm_favorit])
+    |> cast(attrs, [
+      :titel,
+      :beschreibung,
+      :link,
+      :qualitaetskriterium,
+      :typ,
+      :einzelangebot,
+      :suchfunktion,
+      :psychotherapie,
+      :beratungsangebot,
+      :hotline,
+      :app,
+      :website,
+      :pdf,
+      :video,
+      :selbsthilfegruppe,
+      :forum,
+      :chatbot,
+      :selbsttest,
+      :psychoedukation,
+      :corona,
+      :alternative_sprachen,
+      :einfache_sprache,
+      :entstigmatisierende_sprache,
+      :genderneutrale_sprache,
+      :ansprache,
+      :ansprechendes_design,
+      :transdiagnostisch,
+      :beschwerden,
+      :zielgruppen,
+      :region,
+      :bundesland,
+      :city,
+      :organisation,
+      :konfessionell,
+      :kosten,
+      :anmerkungen,
+      :recherchiert_von,
+      :geprueft_von,
+      :aufnahmevorschlag,
+      :aufnahme,
+      :screening,
+      :mm_favorit
+    ])
+    |> validate_required([
+      :titel,
+      :beschreibung,
+      :link,
+      :qualitaetskriterium,
+      :typ,
+      :einzelangebot,
+      :suchfunktion,
+      :psychotherapie,
+      :beratungsangebot,
+      :hotline,
+      :app,
+      :website,
+      :pdf,
+      :video,
+      :selbsthilfegruppe,
+      :forum,
+      :chatbot,
+      :selbsttest,
+      :psychoedukation,
+      :corona,
+      :alternative_sprachen,
+      :einfache_sprache,
+      :entstigmatisierende_sprache,
+      :genderneutrale_sprache,
+      :ansprache,
+      :ansprechendes_design,
+      :transdiagnostisch,
+      :beschwerden,
+      :zielgruppen,
+      :region,
+      :bundesland,
+      :city,
+      :organisation,
+      :konfessionell,
+      :kosten,
+      :anmerkungen,
+      :recherchiert_von,
+      :geprueft_von,
+      :aufnahmevorschlag,
+      :aufnahme,
+      :screening,
+      :mm_favorit
+    ])
   end
 end

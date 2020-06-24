@@ -48,6 +48,14 @@ defmodule MentorWeb.AngebotController do
   def update(conn, %{"id" => id, "angebot" => angebot_params}) do
     angebot = Angebote.get_angebot!(id)
 
+    angebot_params =
+      angebot_params
+      |> parse_list("typ")
+      |> parse_list("alternative_sprachen")
+      |> parse_list("beschwerden")
+      |> parse_list("zielgruppen")
+      |> parse_list("bundesland")
+
     case Angebote.update_angebot(angebot, angebot_params) do
       {:ok, angebot} ->
         conn
