@@ -15,6 +15,14 @@ defmodule MentorWeb.AngebotController do
   end
 
   def create(conn, %{"angebot" => angebot_params}) do
+    angebot_params =
+      angebot_params
+      |> parse_list("typ")
+      |> parse_list("alternative_sprachen")
+      |> parse_list("beschwerden")
+      |> parse_list("zielgruppen")
+      |> parse_list("bundesland")
+
     case Angebote.create_angebot(angebot_params) do
       {:ok, angebot} ->
         conn
@@ -58,5 +66,10 @@ defmodule MentorWeb.AngebotController do
     conn
     |> put_flash(:info, "Angebot deleted successfully.")
     |> redirect(to: Routes.angebot_path(conn, :index))
+  end
+
+  def parse_list(params, key) do
+    %{^key => s} = params
+    %{params | key => String.split(s, ~r/,\s?/) |> Enum.map(fn s -> String.trim(s) end)}
   end
 end

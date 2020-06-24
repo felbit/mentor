@@ -17,7 +17,9 @@ defmodule MentorWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources  "/angebote", AngebotController
+    get "/diagnose", DiagnoseController, :index
+
+    resources "/angebote", AngebotController
   end
 
   # Other scopes may use custom stacks.

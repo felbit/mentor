@@ -12,12 +12,23 @@ Documentation is kept in English for purpose of foreign inclusion. Every German 
 
 Please read the Elixir code guidelines (https://github.com/christopheradams/elixir_style_guide).
 
-== Questioniare / Diagnose
-
-The questionaire (domain term: `Diagnose`) is the central user facing part of the application. 
+== Diagnose (Questionaire)
+The questionaire (domain term: `Diagnose`) is the central user facing part of the application.
 It is essentially a multi-part-form diagnostic that results either in general help and informations about mental health or in a specific list of `-> Angebot`.
 
-== Schemas
+=== Survey
+Opening the questionaire that is composed of questions and answers will create a `Survey`. This can be seen as an instance of the Questionaire. It holds all the choices (`-> Choice`) the user makes while going through the diagnositc. The user should not have to create an account or login to one to use the diagnostic service. So we provide a `survey_id` that tracks the survey. It is generated uniquely and randomly when the survey is started. The `survey_id` can be copied and saved by the user to come back to the survey later and finish it, if it's unfinished yet or revisit the results if the suvey has been finished.
+
+=== Question
+A `Question` is one central data point - or: _step_ - in the survey. Questions are stored in the database. A question has both a `predecessor` and `successor` that are the questions coming before and after this one. For the first question `predecessor` is `nil`. For the last question `successor` is nil. A question also has a list of answers (`-> Answer`). Questions might also be `single_choice` or `multiple_choice`.
+
+=== Answer
+An `Answer` is subdata to a `-> Question`. It belongs to one question and has a `order_number` that defines the order in which the answers appear beneath the question; the number is mutable.
+
+=== Choice
+A `Choice` holds a single answer to a question the user has chosen. It also is bound to a survey to. If the user answers a question a choice is generated, each for every answer the user has activated for that question. If the user does come back to a question and changes the answers all choices are delted and generated newly.
+
+== Backend
 
 === Angebot
 
@@ -98,7 +109,9 @@ mm_favorit   # boolean - is a favourite service of the mental mentor team
 The application is currently hosted on Heroku to provide a quick feedback loop (easy to setup and bring into CI with GitHub).
 The address is `https://evening-fortress-84032.herokuapp.com/`.footnote:[The names for applications are randomly chosen by Heroku, so `evening-fortress-84032` is just a random ID. It would be a good idea to move that to something more meaningful in the future.] +
 
-I followed this tutorial to get it up and running: https://hexdocs.pm/phoenix/heroku.html.
+I followed this tutorial to get it up and running: https://hexdocs.pm/phoenix/heroku.html. +
+
+Afterthought: Maybe it would be a good idea using a Docker container with Heroku here.
 
 === PostgreSQL (Database)
 I used a PostgreSQL database - both, locally as well as with Heroku - just for the sake of being very familiar with it. At Heroku this is currently a `hobby-dev`-tier database for it is free of charge.

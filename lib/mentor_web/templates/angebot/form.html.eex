@@ -18,14 +18,12 @@
   <%= text_input f, :link %>
   <%= error_tag f, :link %>
 
-  <!-- TODO: Make selection of Kammer-verifiziert | KV-verifiziert -->
   <%= label f, :qualitaetskriterium %>
-  <%= text_input f, :qualitaetskriterium %>
+  <%= select f, :qualitaetskriterium, ["Kammer-verifiziert": "Kammer", "KV-verifiziert": "KV"] %>
   <%= error_tag f, :qualitaetskriterium %>
 
-  <!-- TODO: Make selection of Prävention |Hilfsangebot | Information -->
   <%= label f, :typ %>
-  <%= text_input f, :typ %>
+  <%= select f, :typ, ["Prävention": "Praevention", "Hilfsangebot": "Hilfsangebot", "Information": "Information"] %>
   <%= error_tag f, :typ %>
 
   <h2>Art des Angebots</h2>
@@ -94,7 +92,7 @@
 
   <h2>Sprachliche Besonderheiten</h2>
   <%= label f, :alternative_sprachen %>
-  <%= multiple_select f, :alternative_sprachen, ["Option 1": "option1", "Option 2": "option2"] %>
+  <%= text_input f, :alternative_sprachen %>
   <%= error_tag f, :alternative_sprachen %>
 
   <%= label f, :einfache_sprache %>
@@ -124,11 +122,11 @@
   <%= error_tag f, :transdiagnostisch %>
 
   <%= label f, :beschwerden %>
-  <%= multiple_select f, :beschwerden, ["Option 1": "option1", "Option 2": "option2"] %>
+  <%= text_input f, :beschwerden %>
   <%= error_tag f, :beschwerden %>
 
   <%= label f, :zielgruppen %>
-  <%= multiple_select f, :zielgruppen, ["Option 1": "option1", "Option 2": "option2"] %>
+  <%= text_input f, :zielgruppen %>
   <%= error_tag f, :zielgruppen %>
 
   <h2>Ortsgebundenheit</h2>

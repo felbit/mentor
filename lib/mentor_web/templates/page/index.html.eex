@@ -1,37 +1,37 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>Peace-of-mind from prototype to production</p>
-</section>
-
 <section class="row">
   <article class="column">
-    <h2>Resources</h2>
+    <h2>Anwendung</h2>
     <ul>
       <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
+        <a href="/diagnose">Diagnosestrecke</a>
       </li>
       <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md">v1.5 Changelog</a>
+        <a href="/angebote">Angebote-Datenbank</a>
       </li>
     </ul>
   </article>
   <article class="column">
-    <h2>Help</h2>
+    <h2>Fachliche Ressourcen</h2>
     <ul>
       <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
+        <a href="https://docs.google.com/spreadsheets/d/1kKXqAQtKkXL66_EoaPY1Rhg02XY7k1vOFzPte81oZ-k/edit#gid=0">Original Angebote-Spreadsheet</a>
       </li>
       <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
+        <a href="https://docs.google.com/presentation/d/1hLz6ftBlcH1QMZZMLuRlo6W-2yCvKL5fZt8So3oxdLo/edit#slide=id.p">Beispiel Diagnosestrecke</a>
       </li>
       <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
+        <a href="https://docs.google.com/document/d/1Vg1yFUjRedarYPXvrIGMyrpRKritp5fv65jDUXpOjuI/edit">Textbausteine</a>
+      </li>
+    </ul>
+  </article>
+  <article class="column">
+    <h2>Technische Ressourcen</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/felbit/mentor/blob/master/DOCS.adoc">Dokumentation</a>
       </li>
       <li>
-        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
+        <a href="https://github.com/felbit/mentor">Source Code der Anwendung</a>
       </li>
     </ul>
   </article>

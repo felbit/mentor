@@ -1,0 +1,13 @@
+<h1>Diagnosestrecke</h1>
+
+<div class="row">
+  <div class="column">
+    <p>Hallo, ich bin XX. Ich kann dir zu Themen rund um psychische Gesundheit weiterhelfen.</p>
+    <p>... weitere einleitende Sätze ...</p>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <div style="width:auto; text-align:right;"><button class="btn btn-primary">Los geht's!</button></div>
+  </div>
+</div>
