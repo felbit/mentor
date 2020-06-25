@@ -7,10 +7,25 @@
 Im nächsten Schritt geht es darum, ob bestimmte Angebote für dich nicht in Frage kommen.</p>
   </div>
 </div>
+
 <div class="row">
   <div class="column">
-    <div style="width:auto; text-align:left;">
-      <%= link "Zurück zur Homepage", to: "/", method: :get %>
-    </div>
+    <p>
+      <label>Gibt es Angebote, die du gerne ausschließen würdest?</label>
+      <select>
+        <option>-- Bitte wählen --</option>
+        <option>Kostenpflichtige Angebote</option>
+        <option>Angebote von kenfessionellen Trägern</option>
+      </select>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <div style="width:auto; text-align:left;"><%= link "Zurück zur Homepage", to: "/", method: :get %></div>
+  </div>
+  <div class="column">
+    <div style="width:auto; text-align:right;"><%= button "Weiter", to: "/diagnose/einschraenkung", method: :get, disabled: true %></div>
   </div>
 </div>
