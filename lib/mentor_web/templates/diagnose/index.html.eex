@@ -8,6 +8,8 @@
 </div>
 <div class="row">
   <div class="column">
-    <div style="width:auto; text-align:right;"><button class="btn btn-primary">Los geht's!</button></div>
+    <div style="width:auto; text-align:right;">
+      <%= button "Los geht's!", to: "/diagnose/alter", method: :get %>
+    </div>
   </div>
 </div>

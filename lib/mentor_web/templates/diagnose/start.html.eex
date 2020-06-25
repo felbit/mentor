@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="column">
+    <h1>Demographische Daten</h1>
+  </div>
+  <div class="column">
+    <div></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <p>Bevor es losgeht würde ich dich gerne besser kennenlernen ...</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <p>
+      <label>In welchem Bundesland wohnst du?</label>
+      <select>
+        <option>-- Bitte wähle dein Bundesland --</option>
+        <option>Baden-Württemberg</option>
+        <option>Bayern</option>
+        <option>Berlin</option>
+        <option>Brandenburg</option>
+        <option>Bremen</option>
+        <option>Hamburg</option>
+        <option>Hessen</option>
+        <option>Mecklenburg-Vorpommern</option>
+        <option>Niedersachsen</option>
+        <option>Nordrhein-Westfalen</option>
+        <option>Rheinland-Pfalz</option>
+        <option>Saarland</option>
+        <option>Sachsen</option>
+        <option>Sachsen-Anhalt</option>
+        <option>Schleswig-Holstein</option>
+        <option>Thüringen</option>
+      </select>
+    </p>
+    <p>
+      <label>Mit welchem Geschlecht identifizerst du dich?</label>
+      <select>
+        <option>-- Bitte wähle dein Geschlecht --</option>
+        <option>Weiblich</option>
+        <option>Männlich</option>
+        <option>Divers</option>
+        <option>Anderes</option>
+      </select>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <div style="width:auto; text-align:left;"><%= link "Zurück zur Homepage", to: "/", method: :get %></div>
+  </div>
+  <div class="column">
+    <div style="width:auto; text-align:right;"><%= button "Weiter", to: "/diagnose/einschraenkung", method: :get %></div>
+  </div>
+</div>

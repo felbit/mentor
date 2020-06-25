@@ -18,6 +18,10 @@ defmodule MentorWeb.Router do
 
     get "/", PageController, :index
     get "/diagnose", DiagnoseController, :index
+    get "/diagnose/alter", DiagnoseController, :age
+    get "/diagnose/info-alter", DiagnoseController, :info_age
+    get "/diagnose/start", DiagnoseController, :start
+    get "/diagnose/einschraenkung", DiagnoseController, :disclaimer
 
     resources "/angebote", AngebotController
   end

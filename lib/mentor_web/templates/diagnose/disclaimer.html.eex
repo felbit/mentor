@@ -1,0 +1,16 @@
+<h1>Wichtige Einschränkung</h1>
+
+<div class="row">
+  <div class="column">
+
+<p>Wie du sicher schon gemerkt hast, gibt es eine große Anzahl an Angeboten im Bereich psychische Gesundheit.
+Im nächsten Schritt geht es darum, ob bestimmte Angebote für dich nicht in Frage kommen.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <div style="width:auto; text-align:left;">
+      <%= link "Zurück zur Homepage", to: "/", method: :get %>
+    </div>
+  </div>
+</div>

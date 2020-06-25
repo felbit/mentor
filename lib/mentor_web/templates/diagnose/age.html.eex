@@ -1,0 +1,21 @@
+<h1>Demographische Daten</h1>
+
+<div class="row">
+  <div class="column">
+    <p>Bevor es losgeht würde ich dich gerne besser kennenlernen ...</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <p>Wie alt bist du?</p>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <div style="width:auto; text-align:center;"><%= button "jünger als 18 Jahre", to: "/diagnose/info-alter", method: :get %></div>
+  </div>
+  <div class="column">
+    <div style="width:auto; text-align:center;"><%= button "18 Jahre oder älter", to: "/diagnose/start", method: :get %></div>
+  </div>
+</div>
