@@ -1,191 +1,313 @@
+<div class="row">
+  <div class="column">
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
+<div class="row">
+  <div class="column">
+    <h2>Informationen zum Angebot</h2>
+    </div>
+    </div>
+    <div class="row">
+  <div class="column">
+    <%= label f, :titel %>
+    <%= text_input f, :titel %>
+    <%= error_tag f, :titel %>
 
-  <h2>Informationen zum Angebot</h2>
-  <%= label f, :titel %>
-  <%= text_input f, :titel %>
-  <%= error_tag f, :titel %>
+    <%= label f, :beschreibung %>
+    <%= text_input f, :beschreibung %>
+    <%= error_tag f, :beschreibung %>
 
-  <%= label f, :beschreibung %>
-  <%= text_input f, :beschreibung %>
-  <%= error_tag f, :beschreibung %>
+    <%= label f, :link %>
+    <%= text_input f, :link %>
+    <%= error_tag f, :link %>
+  </div>
+  <div class="column">
+    <%= label f, :qualitaetskriterium %>
+    <%= select f, :qualitaetskriterium, ["Kammer-verifiziert": "Kammer", "KV-verifiziert": "KV"] %>
+    <%= error_tag f, :qualitaetskriterium %>
 
-  <%= label f, :link %>
-  <%= text_input f, :link %>
-  <%= error_tag f, :link %>
+    <%= label f, :typ %>
+    <%= select f, :typ, ["Prävention": "Praevention", "Hilfsangebot": "Hilfsangebot", "Information": "Information"] %>
+    <%= error_tag f, :typ %>
+  </div>
+</div>
+<hr/>
+<div class="row">
+  <div class="column">
+    <h2>Art des Angebots</h2>
 
-  <%= label f, :qualitaetskriterium %>
-  <%= select f, :qualitaetskriterium, ["Kammer-verifiziert": "Kammer", "KV-verifiziert": "KV"] %>
-  <%= error_tag f, :qualitaetskriterium %>
-
-  <%= label f, :typ %>
-  <%= select f, :typ, ["Prävention": "Praevention", "Hilfsangebot": "Hilfsangebot", "Information": "Information"] %>
-  <%= error_tag f, :typ %>
-
-  <h2>Art des Angebots</h2>
-  <%= label f, :einzelangebot %>
-  <%= checkbox f, :einzelangebot %>
+  <label>
+    <%= checkbox f, :einzelangebot %> Einzelangebot
+  </label>
   <%= error_tag f, :einzelangebot %>
 
-  <%= label f, :suchfunktion %>
-  <%= checkbox f, :suchfunktion %>
+  <label>
+    <%= checkbox f, :suchfunktion %> Vernetz- / Suchfunktion
+  </label>
   <%= error_tag f, :suchfunktion %>
 
-  <%= label f, :psychotherapie %>
-  <%= checkbox f, :psychotherapie %>
+  <label>
+    <%= checkbox f, :psychotherapie %> Verweis an Psychotherapie
+  </label>
   <%= error_tag f, :psychotherapie %>
 
-  <%= label f, :beratungsangebot %>
-  <%= checkbox f, :beratungsangebot %>
+  <label>
+    <%= checkbox f, :beratungsangebot %> Beratungsangebot
+  </label>
   <%= error_tag f, :beratungsangebot %>
 
-  <%= label f, :hotline %>
-  <%= checkbox f, :hotline %>
+  <label>
+    <%= checkbox f, :hotline %> Hotline
+  </label>
   <%= error_tag f, :hotline %>
+  </div>
 
+  <div class="column">
   <h2>Angebotene Formate</h2>
-  <%= label f, :app %>
-  <%= checkbox f, :app %>
+
+  <label>
+  <%= checkbox f, :app %> Mobile App
+  </label>
   <%= error_tag f, :app %>
 
-  <%= label f, :website %>
-  <%= checkbox f, :website %>
+  <label>
+  <%= checkbox f, :website %> Website
+  </label>
   <%= error_tag f, :website %>
 
-  <%= label f, :pdf %>
-  <%= checkbox f, :pdf %>
+  <label>
+  <%= checkbox f, :pdf %> PDF-Datei
+  </label>
   <%= error_tag f, :pdf %>
 
-  <%= label f, :video %>
-  <%= checkbox f, :video %>
+  <label>
+  <%= checkbox f, :video %> Video
+  </label>
   <%= error_tag f, :video %>
+  </div>
 
+<hr/>
+<div class="column">
   <h2>Angebotsformen</h2>
-  <%= label f, :selbsthilfegruppe %>
-  <%= checkbox f, :selbsthilfegruppe %>
+
+  <label>
+  <%= checkbox f, :selbsthilfegruppe %> Selbsthilfegruppe
+  </label>
   <%= error_tag f, :selbsthilfegruppe %>
 
-  <%= label f, :forum %>
-  <%= checkbox f, :forum %>
+  <label>
+  <%= checkbox f, :forum %> Forum
+  </label>
   <%= error_tag f, :forum %>
 
-  <%= label f, :chatbot %>
-  <%= checkbox f, :chatbot %>
+  <label>
+  <%= checkbox f, :chatbot %> Chatsystem / -Bot
+  </label>
   <%= error_tag f, :chatbot %>
 
-  <%= label f, :selbsttest %>
-  <%= checkbox f, :selbsttest %>
+  <label>
+  <%= checkbox f, :selbsttest %> Selbsttest
+  </label>
   <%= error_tag f, :selbsttest %>
 
-  <%= label f, :psychoedukation %>
-  <%= checkbox f, :psychoedukation %>
+  <label>
+  <%= checkbox f, :psychoedukation %> Psychoedukation
+  </label>
   <%= error_tag f, :psychoedukation %>
-
+</div>
+</div>
+<hr/>
+<div class="row">
+  <div class="column">
   <h2>COVID-19</h2>
-  <%= label f, :corona %>
-  <%= checkbox f, :corona %>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+  <label>
+  <%= checkbox f, :corona %> Speziell auf Corona / COVID-19 ausgerichtetes Angebot.
+  </label>
   <%= error_tag f, :corona %>
-
+  </div>
+</div>
+<hr/>
+<div class="row">
+  <div class="column">
   <h2>Sprachliche Besonderheiten</h2>
-  <%= label f, :alternative_sprachen %>
-  <%= text_input f, :alternative_sprachen %>
-  <%= error_tag f, :alternative_sprachen %>
+  </div>
+</div>
+<div class="row">
 
-  <%= label f, :einfache_sprache %>
-  <%= checkbox f, :einfache_sprache %>
+  <div class="column">
+  <label>
+  <%= checkbox f, :einfache_sprache %> Einfache Sprache
+  </label>
   <%= error_tag f, :einfache_sprache %>
 
-  <%= label f, :entstigmatisierende_sprache %>
-  <%= checkbox f, :entstigmatisierende_sprache %>
+  <label>
+  <%= checkbox f, :entstigmatisierende_sprache %> Entstigmatiserende Sprache
+  </label>
   <%= error_tag f, :entstigmatisierende_sprache %>
 
-  <%= label f, :genderneutrale_sprache %>
-  <%= checkbox f, :genderneutrale_sprache %>
+  <label>
+  <%= checkbox f, :genderneutrale_sprache %> Genderneutrale Sprache
+  </label>
   <%= error_tag f, :genderneutrale_sprache %>
+</div>
 
+  <div class="column">
   <%= label f, :ansprache %>
-  <%= text_input f, :ansprache %>
+  <%= select f, :ansprache, ["Du": "Du", "Sie": "Sie", "unpersönlich": "unpersoenlich"] %>
   <%= error_tag f, :ansprache %>
 
-  <h2>Gestaltung</h2>
-  <%= label f, :ansprechendes_design %>
-  <%= checkbox f, :ansprechendes_design %>
-  <%= error_tag f, :ansprechendes_design %>
+  <label>
+    Weitere Sprachen (außer Deutsch):
+  </label>
 
+  <%= text_input f, :alternative_sprachen, placeholder: "Englisch, Arabisch, leichte Sprache" %>
+  <%= error_tag f, :alternative_sprachen %>
+  </div>
+
+
+</div>
+<hr/>
+<div class="row">
+  <div class="column">
+
+  <h2>Gestaltung</h2>
+  <label>
+    <%= checkbox f, :ansprechendes_design %> Ansprechende Gestaltung
+  </label>
+  <%= error_tag f, :ansprechendes_design %>
+</div>
+</div>
+<hr/>
+<div class="row">
+  <div class="column">
   <h2>Diagnosefokus</h2>
-  <%= label f, :transdiagnostisch %>
-  <%= checkbox f, :transdiagnostisch %>
+  <label>
+    <%= checkbox f, :transdiagnostisch %> Transdiagnostisch
+  </label>
   <%= error_tag f, :transdiagnostisch %>
 
-  <%= label f, :beschwerden %>
-  <%= text_input f, :beschwerden %>
+  <label>
+    Beschwerdespezifisch <%= text_input f, :beschwerden, placeholder: "Angebot für ein spezifisches Störungsbild oder Symptom, z.B. Angst, Depression, ..." %>
+  </label>
   <%= error_tag f, :beschwerden %>
 
-  <%= label f, :zielgruppen %>
-  <%= text_input f, :zielgruppen %>
+  <label>
+    Zielgruppen <%= text_input f, :zielgruppen, placeholder: "z.B. Menschen in Krisen, Kinder, Jugendliche, Erwachsene, Privatpatienten, Ältere, ..." %>
+  </label>
   <%= error_tag f, :zielgruppen %>
-
+</div>
+</div>
+<hr/>
+<div class="row">
+  <div class="column">
   <h2>Ortsgebundenheit</h2>
-  <%= label f, :region %>
-  <%= text_input f, :region %>
+  <label>
+    Region <%= select f, :region, [national: "national", regional: "regional", beides: "beides"] %>
+  </label>
   <%= error_tag f, :region %>
 
-  <%= label f, :bundesland %>
-  <%= text_input f, :bundesland %>
+  <label>
+    Bundesländer (optional) <%= text_input f, :bundesland, placeholder: "BW, BY, SN" %>
+  </label>
   <%= error_tag f, :bundesland %>
 
-  <%= label f, :city %>
+  <label>Stadt (optional)
   <%= text_input f, :city %>
+  </label>
   <%= error_tag f, :city %>
-
+</div>
+</div>
+<hr/>
+<div class="row">
+  <div class="column">
   <h2>Anbieter</h2>
-  <%= label f, :organisation %>
-  <%= text_input f, :organisation %>
+  <label>
+  Verantwortliche Institution / Organisation <%= text_input f, :organisation %>
+  </label>
   <%= error_tag f, :organisation %>
 
-  <%= label f, :konfessionell %>
-  <%= checkbox f, :konfessionell %>
+  <label>
+    <%= checkbox f, :konfessionell %> konfessioneller Träger
+  </label>
   <%= error_tag f, :konfessionell %>
 
-  <%= label f, :kosten %>
-  <%= text_input f, :kosten %>
+  <label>
+  Kosten <%= select f, :kosten, ["kostenlos": "kostenlos", "KV-erstattungsfähig": "erstattung", kostenpflichtig: "kostenpflichtig", "teilweise kostenpflichtig": "teilweise" ] %>
+  </label>
   <%= error_tag f, :kosten %>
-
+</div>
+</div>
+<hr/>
+<div class="row">
+  <div class="column">
   <h2>Rechercheinterna</h2>
   <p><lead>Der folgende Abschnitt wird dem Nutzer nicht angezeigt und dient ausschließlich der internen Verarbeitung.</lead></p>
-  <%= label f, :anmerkungen %>
-  <%= text_input f, :anmerkungen %>
+  <label>
+    Anmerkungen des Bearbeiters <%= textarea f, :anmerkungen %>
+  </label>
   <%= error_tag f, :anmerkungen %>
-
-  <%= label f, :recherchiert_von %>
-  <%= text_input f, :recherchiert_von %>
+  </div>
+  </div>
+<div class="row">
+  <div class="column">
+  <label>
+    Recherchiert von <%= text_input f, :recherchiert_von %>
+  </label>
   <%= error_tag f, :recherchiert_von %>
-
-  <%= label f, :geprueft_von %>
-  <%= text_input f, :geprueft_von %>
+</div>
+<div class="column">
+  <label>
+    Geprüft von <%= text_input f, :geprueft_von %>
+  </label>
   <%= error_tag f, :geprueft_von %>
-
-  <%= label f, :aufnahmevorschlag %>
-  <%= checkbox f, :aufnahmevorschlag %>
+</div>
+  </div>
+<div class="row">
+  <div class="column">
+  <label>
+    <%= checkbox f, :aufnahmevorschlag %> Vorschlag zur Aufnahme
+  </label>
   <%= error_tag f, :aufnahmevorschlag %>
-
-  <%= label f, :aufnahme %>
-  <%= checkbox f, :aufnahme %>
+</div>
+<div class="column">
+  <label>
+    <%= checkbox f, :aufnahme %> Aufnahmevorschlag angenommen
+  </label>
   <%= error_tag f, :aufnahme %>
-
-  <%= label f, :screening %>
-  <%= checkbox f, :screening %>
+</div>
+  </div>
+<hr/>
+<div class="row">
+  <div class="column">
+  <label>
+    <%= checkbox f, :screening %> Weiterbearbeitung fand nach erstem Screening statt
+  </label>
   <%= error_tag f, :screening %>
-
-  <%= label f, :mm_favorit %>
-  <%= checkbox f, :mm_favorit %>
+</div>
+<div class="column">
+  <label>
+  <%= checkbox f, :mm_favorit %> Das Angebot ist ein MentalMentor-Favorit
+  </label>
   <%= error_tag f, :mm_favorit %>
-
-  <div>
+</div>
+  </div>
+  <hr/>
+  <div class="row">
+  <div class="column">
     <%= submit "Save" %>
   </div>
+  </div>
 <% end %>
+  </div>
+</div>
+
+  </div>
+</div>

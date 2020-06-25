@@ -40,7 +40,7 @@ defmodule Mentor.Angebote.Angebot do
 
     field :region, :string
     field :bundesland, {:array, :string}
-    field :city, :string, default: "-"
+    field :city, :string
 
     field :anmerkungen, :string
     field :recherchiert_von, :string
@@ -102,8 +102,6 @@ defmodule Mentor.Angebote.Angebot do
     ])
     |> validate_required([
       :titel,
-      :beschreibung,
-      :link,
       :qualitaetskriterium,
       :typ,
       :einzelangebot,
@@ -121,24 +119,16 @@ defmodule Mentor.Angebote.Angebot do
       :selbsttest,
       :psychoedukation,
       :corona,
-      :alternative_sprachen,
       :einfache_sprache,
       :entstigmatisierende_sprache,
       :genderneutrale_sprache,
-      :ansprache,
       :ansprechendes_design,
       :transdiagnostisch,
-      :beschwerden,
-      :zielgruppen,
       :region,
-      :bundesland,
-      :city,
       :organisation,
       :konfessionell,
       :kosten,
-      :anmerkungen,
       :recherchiert_von,
-      :geprueft_von,
       :aufnahmevorschlag,
       :aufnahme,
       :screening,

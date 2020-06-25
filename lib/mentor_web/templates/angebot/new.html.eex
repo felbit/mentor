@@ -1,4 +1,4 @@
-<h1>New Angebot</h1>
+<h1>Neues Angebot</h1>
 
 <%= render "form.html", Map.put(assigns, :action, Routes.angebot_path(@conn, :create)) %>
 
